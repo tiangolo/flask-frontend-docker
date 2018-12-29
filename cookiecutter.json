@@ -1,0 +1,21 @@
+{
+    "project_name": "Base Project",
+    "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+    "domain_main": "{{cookiecutter.project_slug}}.com",
+
+    "docker_swarm_stack_name_main": "{{cookiecutter.domain_main|replace('.', '-')}}",
+
+    "traefik_constraint_tag": "{{cookiecutter.domain_main}}",
+    "traefik_public_network": "traefik-public",
+
+    "docker_image_prefix": "",
+
+    "docker_image_backend": "{{cookiecutter.docker_image_prefix}}backend",
+    "docker_image_frontend": "{{cookiecutter.docker_image_prefix}}frontend",
+
+    "_copy_without_render": [
+        "frontend/src/**/*.html",
+        "frontend/src/**/*.vue",
+        "frontend/node_modules/*"
+    ]
+}

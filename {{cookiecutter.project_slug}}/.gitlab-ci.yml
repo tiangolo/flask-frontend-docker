@@ -1,0 +1,36 @@
+image: tiangolo/docker-with-compose
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+stages:
+  - build
+  - deploy
+  
+build-prod:
+  stage: build
+  script:
+    - TAG=prod FRONTEND_ENV=production sh ./scripts/build-push.sh
+  only:
+    - production
+  tags:
+    - build
+    - test
+
+deploy-prod:
+  stage: deploy
+  script:
+    - >
+      DOMAIN={{cookiecutter.domain_main}}
+      TRAEFIK_TAG={{cookiecutter.traefik_constraint_tag}}
+      STACK_NAME={{cookiecutter.docker_swarm_stack_name_main}}
+      TAG=prod
+      sh ./scripts/deploy.sh
+  environment:
+    name: production
+    url: https://{{cookiecutter.domain_main}}
+  only:
+    - production
+  tags:
+    - swarm
+    - prod

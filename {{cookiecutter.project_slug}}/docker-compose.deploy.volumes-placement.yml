@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  proxy:
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager

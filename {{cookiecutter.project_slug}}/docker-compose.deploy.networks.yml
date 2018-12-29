@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  proxy:
+    networks:
+      - ${TRAEFIK_PUBLIC_NETWORK}
+      - default
+
+networks:
+  {{cookiecutter.traefik_public_network}}:
+    external: true

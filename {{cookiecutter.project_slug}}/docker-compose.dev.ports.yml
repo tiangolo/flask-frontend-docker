@@ -1,0 +1,6 @@
+version: '3.3'
+services:
+  proxy:
+    ports:
+      - '80:80'
+      - '8090:8080'
