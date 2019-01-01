@@ -6,7 +6,7 @@ set -e
 DOMAIN=${DOMAIN} \
 TRAEFIK_TAG=${TRAEFIK_TAG} \
 STACK_NAME=${STACK_NAME} \
-TAG=${TAG} \
+TAG=${TAG-latest} \
 docker-compose \
 -f docker-compose.shared.admin.yml \
 -f docker-compose.deploy.command.yml \
