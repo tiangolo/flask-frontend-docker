@@ -26,6 +26,7 @@ With automatic HTTPS certificate generation using Let's Encrypt.
     * So you can have both backend and frontend under the same domain, separated by path, but served by the two different containers
 * Automatic (free) HTTPS certificate generation with Let's Encrypt and Traefik
 
+
 ## How to use it
 
 Go to the directoy where you want to create your project and run:
@@ -50,6 +51,42 @@ Read the [**Guide to deploy a Docker Swarm Mode Cluster**](https://medium.com/@t
 ## More details
 
 After using this generator, your new project (the directory created) will contain an extensive `README.md` with instructions for development, deployment, etc. You can pre-read [the project `README.md` template here too](./{{cookiecutter.project_slug}}/README.md).
+
+## Alternatives
+
+This is a very simple project generator, with just the minimum to have:
+
+* Flask in one Docker container.
+* A modern frontend in a separate Docker container:
+    * With an example minimal Vue application, that can easily be changed to React, Angular, etc.
+* Both backend and frontend being served using a single proxy/load-balancer with Traefik:
+    * Generating automatic HTTPS certificates with Let's Encrypt.
+
+This doesn't include many useful tools for building APIs, database integrations, more sophisticate frontend features, etc.
+
+It is just to show the minimum configurations to achieve that.
+
+If you are building a backend that would be used by a modern frontend (like in this minimal project generator) you might benefit from other additional tools made for APIs.
+
+This project generator has several bigger (more complete) sibling project generators that you might want to check and use.
+
+### FastAPI
+
+If you are building a backend to be used as an API and a modern frontend that communicates with it (as in this project), you might benefit from using [**FastAPI**](https://github.com/tiangolo/fastapi) instead of Flask, and a corresponding project generator, including a NoSQL database, security, authentication, asynchronous jobs, email notifications, etc:
+
+https://github.com/tiangolo/full-stack-fastapi-couchbase
+
+
+### Flask
+
+If for some reason you can't (or don't want to) use FastAPI and want to keep using Flask, there are also bigger sibling projects:
+
+https://github.com/tiangolo/full-stack
+
+https://github.com/tiangolo/full-stack-flask-couchbase
+
+https://github.com/tiangolo/full-stack-flask-couchdb
+
 
 ## License
 
