@@ -3,7 +3,7 @@
     "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
     "domain_main": "{{cookiecutter.project_slug}}.com",
 
-    "backend_cors_origins": "http://localhost, http://localhost:4200, http://localhost:3000, http://localhost:8080, http://dev.{{cookiecutter.domain_main}}, https://{{cookiecutter.domain_staging}}, https://{{cookiecutter.domain_main}}, http://local.dockertoolbox.tiangolo.com, http://localhost.tiangolo.com",
+    "backend_cors_origins": "http://localhost, http://localhost:4200, http://localhost:3000, http://localhost:8080, http://dev.{{cookiecutter.domain_main}}, https://{{cookiecutter.domain_main}}, http://local.dockertoolbox.tiangolo.com, http://localhost.tiangolo.com",
 
     "docker_swarm_stack_name_main": "{{cookiecutter.domain_main|replace('.', '-')}}",
 
