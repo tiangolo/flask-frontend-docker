@@ -6,4 +6,4 @@ services:
     build: 
       context: ./frontend
       args: 
-        FRONTEND_ENV: dev
+        FRONTEND_ENV: development
