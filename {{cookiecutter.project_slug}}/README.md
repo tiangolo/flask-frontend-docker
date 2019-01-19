@@ -229,9 +229,9 @@ VUE_APP_ENV=staging
 
 ## Deployment
 
-You can deploy the stack to a Docker Swarm mode cluster manually or use CI systems to do it automatically.
+You can deploy the stack to a Docker Swarm mode cluster with a main Traefik proxy, set up using the ideas from <a href="https://dockerswarm.rocks" target="_blank">DockerSwarm.rocks</a>, to get automatic HTTPS certificates, etc.
 
-Everything is configured to be deployed in a Docker Swarm mode cluster with Traefik [as described in this guide](https://medium.com/@tiangolo/docker-swarm-mode-and-traefik-for-a-https-cluster-20328dba6232).
+And you can use CI (continuous integration) systems to do it automatically.
 
 
 ### Deploy to a Docker Swarm mode cluster
