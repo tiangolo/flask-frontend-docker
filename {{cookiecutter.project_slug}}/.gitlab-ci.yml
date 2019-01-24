@@ -12,7 +12,7 @@ build-prod:
   script:
     - TAG=prod FRONTEND_ENV=production sh ./scripts/build-push.sh
   only:
-    - production
+    - master
   tags:
     - build
     - test
@@ -30,7 +30,7 @@ deploy-prod:
     name: production
     url: https://{{cookiecutter.domain_main}}
   only:
-    - production
+    - master
   tags:
     - swarm
     - prod
